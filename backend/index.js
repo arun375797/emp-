@@ -5,7 +5,7 @@ const UserModel = require("./models/User");
 const Employee = require("./models/Employee");
 const adminRoutes=require("./Routes/adminRoutes")
 const employeeRoutes=require("./Routes/employeeRoutes")
-require('dotenv').config();
+
 const path = require("path");
 const app = express();
 app.use(express.json());
@@ -13,10 +13,7 @@ app.use(cors());
 
 mongoose
   .connect(
-    MONGO_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-  }
+    "mongodb+srv://arun:life@cluster0.acjyovk.mongodb.net/empreact?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
